@@ -2,6 +2,8 @@
 
 namespace App\Core;
 
+use App\Controllers\studentsControler;
+
 class Router
 {
 
@@ -12,15 +14,19 @@ class Router
 
         if($method == 'GET' && $uri == '/students'){
             require_once './app/controllers/StudentControl.php';
+            $controller = new studentsControler();
+            $controller->index();
             return;
         }
 
         if($method == 'GET' && $uri == '/students/create'){
-          
+            require_once './app/controllers/StudentControl.php';
+            $controller = new studentsControler();
+            $controller->create();
             return;
         }
 
         http_response_code(response_code: 404);
         echo '<h1>404 - Page Not Found</h1>';
     }
-}
+}   
