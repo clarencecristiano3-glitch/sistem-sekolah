@@ -4,6 +4,7 @@ namespace App\Core;
 
 use App\Controllers\studentsControler;
 
+
 class Router
 {
     private array  $router = [];
@@ -38,7 +39,7 @@ class Router
                 $controller = new $controllerClass();
 
                 $function = $route['function'];
-                $controller->$function();
+                call_user_func_array(callback:[$controller,$function],$matches);
 
                 return;
             }
