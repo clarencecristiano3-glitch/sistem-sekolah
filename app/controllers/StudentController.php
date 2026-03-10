@@ -1,0 +1,19 @@
+<?php
+    namespace App\Controllers;
+
+
+    class StudentController
+    {
+
+        public function index ():void
+        {
+            require_once '../app/views/students/index.php';
+        }
+
+        Public function create(): void
+        {
+            require_once '../app/views/students/create.php';
+        }
+
+    }
+?>
