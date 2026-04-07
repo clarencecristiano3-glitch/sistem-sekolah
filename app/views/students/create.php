@@ -49,7 +49,10 @@
                     <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"type="text" id="phone_number" 
                     placeholder="Masukkan No Telepon" name="phone_number">
                 </div>
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Simpan</button>
+                <div class="flex justify-end col-span-2 gap-4">
+                    <a href="/students" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600">Kembali</a>
+                    <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">Simpan</button>
+                </div>
             </form>
         </div>
         <!-- Card Body End -->
