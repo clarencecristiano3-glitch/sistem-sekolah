@@ -51,7 +51,7 @@
                         <td class="px-4 py-2 text-left">08214358476575</td>
                         <td class="px-4 py-2">
                             <div class="flex justify-center items-center gap-4">
-                                <a href="Detail" class="text-green-500">Detail</a>
+                                <a href="/students/1" class="text-green-500">Detail</a>
                                 <a href="edit" class="text-yellow-500">Edit</a>
                                 <a href="hapus" class="text-red-500">Hapus</a>
 
