@@ -1,40 +1,54 @@
 <div class="mt-8 space-y-2">
-            <!-- Card Header Start -->
-            <div class="p-4 shadow rounded-lg bg-white">
-                <h1 class="text-2xl font-bold">Tambah Siswa</h1>
-                <p>Menambahkan siswa ke dalam sistem</p>
-            </div>
-            <!-- Card Header End -->
- 
-            <!-- Card body Start -->
-                <div class= "bg-white shadow rounded-lg p-4 " >
-                   <form action="" class="grid grid-cols-2 gap-4">
-                   <div class="space-y-2">
-                        <label class = " block font-bold" for="name">Nama</label>
-                        <input class="w-full px-4 py-2 border rounded-lg " type="text" id="name" placeholder="Masukkan nama" name="name">
-                    </div>
- 
-                   <div class="space-y-2" >
-                        <label class = " block font-bold" for="nis">NIS</label>
-                        <input class="w-full px-4 py-2 border rounded-lg " type="text" id="nis" placeholder="Masukkan NIS" name="nis">
-                    </div>
- 
-                   <div class="space-y-2">
-                        <label class = " block font-bold" for="class">Kelas</label>
-                        <input class="w-full px-4 py-2 border rounded-lg " type="text" id="class" placeholder="Masukkan kelas" name="class">
-                    </div>
- 
-                   <div class="space-y-2">
-                        <label class = " block font-bold" for="phone_number">No Telepon</label>
-                        <input class="w-full px-4 py-2 border rounded-lg " type="text" id="phone_number" placeholder="Masukkan nama" name="phone_number">
-                    </div>
- 
-                    <div class="flex justify-end col-span-2 gap-4">
-                        <a href="/students" class="py-2 px-4 bg-gray-100 rounded-lg">Kembali</a>
-                        <button type="submit" class="px-4 py-2 bg-blue-500 rounded-lg text-white">Simpan</button>
-                    </div>
- 
-                   </form>
-                </div>
-            <!-- Card body End -->
-        </div>
+    <!-- Card Header Start -->
+    <div class="p-4 shadow rounded-lg bg-white">
+        <h1 class="text-2xl font-bold">Daftar Siswa</h1>
+        <p>Menampilkan daftar siswa yang terdaftar</p>
+    </div>
+    <!-- Card Header End -->
+
+    <!-- Card Body Start -->
+    <div class="bg-white shadow rounded-lg">
+        <table class="w-full">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="px-4 py-2 text-left">No</th>
+                    <th class="px-4 py-2 text-left">Nama</th>
+                    <th class="px-4 py-2 text-left">NIS</th>
+                    <th class="px-4 py-2 text-left">Kelas</th>
+                    <th class="px-4 py-2 text-left">No Telepon</th>
+                    <th class="px-4 py-2">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($students as $index => $student): ?>
+                    <tr>
+                        <td class="px-4 py-2 text-left">
+                            <?= $index + 1 ?>
+                        </td>
+                        <td class="px-4 py-2 text-left">
+                            <?= $student['name'] ?>
+                        </td>
+                        <td class="px-4 py-2 text-left">
+                            <?= $student['nis'] ?>
+                        </td>
+                        <td class="px-4 py-2 text-left">
+                            <?= $student['class'] ?>
+                        </td>
+                        <td class="px-4 py-2 text-left">
+                            <?= $student['phone_number'] ?>
+                        </td>
+                        <td class="px-4 py-2">
+                            <div class="flex justify-center items-center gap-4">
+                                <a href="/students/<?= $student['id'] ?>" class="text-green-500">Detail</a>
+                                <a href="/students/<?= $student['id'] ?>/edit" class="text-yellow-500">Edit</a>
+                                <a href="" class="text-red-500">Hapus</a>
+                            </div>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
+
+            </tbody>
+        </table>
+    </div>
+    <!-- Card Body End -->
+</div>
