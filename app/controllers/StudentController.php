@@ -47,6 +47,12 @@ class StudentController extends Controller
             'student' => $student
         ]);
     }
+    public function store()
+    {
+        $studentModel = new Student();
+        $studentModel->insert($_POST);
+        
 
+    }
 
 }
