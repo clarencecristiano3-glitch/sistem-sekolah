@@ -1,32 +1,33 @@
 <div class="mt-8 space-y-2">
             <!-- Card Header Start -->
             <div class="p-4 shadow rounded-lg bg-white">
-                <h1 class="text-2xl font-bold">Tambah Siswa</h1>
-                <p>Menambahkan siswa ke dalam sistem</p>
+                <h1 class="text-2xl font-bold">Edit Siswa</h1>
+                <p>Memperbarui informasi siswa</p>
             </div>
             <!-- Card Header End -->
  
             <!-- Card body Start -->
                 <div class= "bg-white shadow rounded-lg p-4 " >
-                   <form action="" class="grid grid-cols-2 gap-4">
+                   <form action="/students/<?= $student['id'] ?>" method="POST" class="grid grid-cols-2 gap-4">
+                    <input type="hidden" name="_method" value="PUT">
                    <div class="space-y-2">
                         <label class = " block font-bold" for="name">Nama</label>
-                        <input class="w-full px-4 py-2 border rounded-lg " type="text" id="name" placeholder="Masukkan nama" name="name">
+                        <input value="<?= $student['name'] ?>" class="w-full px-4 py-2 border rounded-lg " type="text" id="name" placeholder="Masukkan nama" name="name">
                     </div>
  
                    <div class="space-y-2" >
                         <label class = " block font-bold" for="nis">NIS</label>
-                        <input class="w-full px-4 py-2 border rounded-lg " type="text" id="nis" placeholder="Masukkan NIS" name="nis">
+                        <input value="<?= $student['nis'] ?>" class="w-full px-4 py-2 border rounded-lg " type="text" id="nis" placeholder="Masukkan NIS" name="nis">
                     </div>
  
                    <div class="space-y-2">
                         <label class = " block font-bold" for="class">Kelas</label>
-                        <input class="w-full px-4 py-2 border rounded-lg " type="text" id="class" placeholder="Masukkan kelas" name="class">
+                        <input value="<?= $student['class'] ?>" class="w-full px-4 py-2 border rounded-lg " type="text" id="class" placeholder="Masukkan kelas" name="class">
                     </div>
  
                    <div class="space-y-2">
                         <label class = " block font-bold" for="phone_number">No Telepon</label>
-                        <input class="w-full px-4 py-2 border rounded-lg " type="text" id="phone_number" placeholder="Masukkan nama" name="phone_number">
+                        <input value="<?= $student['phone_number'] ?>" class="w-full px-4 py-2 border rounded-lg " type="text" id="phone_number" placeholder="Masukkan nama" name="phone_number">
                     </div>
  
                     <div class="flex justify-end col-span-2 gap-4">
@@ -36,6 +37,6 @@
  
                    </form>
                 </div>
-            <!-- Card body End -->
+            <!-- Card body End --> 
         </div>
         
